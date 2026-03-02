@@ -1,0 +1,399 @@
+/* (*) stands for universal selector css uses different types of selectors to style. 
+Universal selector is used to apply style universally to the entire page.*/
+
+
+/*CSS Box model
+
+content: the actual content
+padding: space surrounding the content inside the border
+border: between padding and margin
+margin: space around the border*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/* Root selector: psudeo class that targets highest level element in a document's structure <html>
+mostly used to define custom properties that can be accessed globally throught the stylesheet
+they have both global scope and local scope.    */
+:root{
+    /* colors*/
+    --color-primary:royalblue;
+    --color-primary-text:white;
+    --color-secondary:white;
+    --color-secondary-text:royalblue;
+
+    /*Typography*/
+    /*There are two types of ways to express sizes in css absolute sizes(fixed) and relatable sizes(scalable)
+    */
+    /*absolute units include pixels(px)
+    reative units include 
+    em: relative to the font size of the parent element(2em means 2 times the size of the current font)(for elements)
+    rem: relative to the root <html> element's font size(does not interit from the parents but rather the root element's size)(typography)
+    %: relatable to the parent elements size, used for fluid layouts
+    viewport units: vw,vh,vmin,vmax relative to view port's dimensions*/
+    --text-small:0.5rem;
+    --text-medium:1rem;
+    --text-large:1.25rem;
+    --text-extralarge:1.5rem;
+    --text-XXlarge:2rem;
+
+}
+
+.navbar{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.5px solid;
+}
+
+.nav-list{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    margin-right: 25px;
+    gap: 10px;
+    align-items: center;
+}
+.nav-links a{
+    text-decoration: none;
+    color: var(--color-primary-text);
+    font-size: var(--text-large);
+
+}
+
+#home{
+    height: 90vh;
+}
+
+.landing-img{
+    height: 100%;
+    background-size: cover;
+    background-image: url("law-lfw.png");
+    background-repeat: no-repeat;   
+    background-position: center;
+    
+}
+
+.tagline{
+    position: absolute;
+    font-size: 3rem;
+    margin-top:175px;
+    margin-left: 35px;
+    color: var(--color-primary-text);
+    font-weight: 300;
+
+}
+.quote{
+    position: absolute;
+    color: var(--color-primary-text);
+    font-weight: lighter;
+    font-size: 3rem;
+    margin-top: 255px;
+    margin-left: 35px;
+
+
+
+}
+.menu-button{
+    font-size: var(--text-extralarge);
+    display: none;
+}
+
+
+#about{
+    min-height: 140vh;
+    display: flex;
+    background-color: var(--color-secondary);
+
+
+}
+
+.img-container-1{
+
+    max-width: 550px;
+    width: 100%;
+}
+
+.courtroom-img{
+    width: 100%;
+    height: auto;
+}
+
+.about-one p {
+    font-size: 1.4em;
+}
+.about-one{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.about-two{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.founders-desk{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+}
+
+
+.founder-1, .founder-2 {
+    text-align: center;
+
+}
+
+
+.founder-img-1-c , .founder-img-2-c{
+    width: 100%;
+    max-width: 250px;
+
+}
+
+.founder-img-1, .founder-img-2{
+    height: auto;
+    max-width: 250px;
+    
+}
+
+.more-about{
+    font-size: var(--text-large);
+}
+
+
+#services{
+    min-height: 110vh;
+}
+
+#services h1{
+    margin-top: 15px;
+    font-size: 5rem;
+    font-weight: 200;
+    text-align: center;
+}
+
+.services-container{
+    margin-top: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+    row-gap: 15px;
+    flex-wrap: wrap;
+    padding: 1.5em;
+}
+
+.services-box{
+    height: 175px;
+    width: 175px;
+    padding: 1.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: var(--text-large);
+    border: 1px solid black;    
+}
+
+.services-box:hover{
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: var(--color-primary);
+    color: var(--color-primary-text);
+
+}
+footer {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    color: var(--color-primary-text);
+    font-weight: bold;
+
+}
+
+#contact h1 {
+    font-size: 5rem;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.contact-container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#contact-list{
+    height: 450px;
+  
+}
+
+.contact-list{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3.6em;
+    padding: 2em;
+
+
+
+}
+.contact-list li {
+    list-style: none;
+    font-weight: bold;
+
+
+}
+
+.contact-list a{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: start;
+
+}
+
+.contact-form-container{
+    width: 400px;
+    height: 470px;
+}
+
+#contact-form{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 15px;
+    border: dotted var(--color-primary);
+    border-radius: 10px;
+
+}
+
+#contact-form h3 {
+    text-align: center;
+    font-size: var(--text-XXlarge);
+    color: var(--color-secondary-text);
+}
+
+#contact-form label{
+    font-weight: bold;
+    color: var(--color-secondary-text);
+
+} 
+
+#description {
+    height: 100px;
+}
+
+.contact-form-btn{
+    background-color: var(--color-primary);
+    color: var(--color-primary-text);
+    border: none;
+    height: 35px;
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: var(--text-large);
+}
+
+@keyframes slidein{
+    from {
+        opacity: 0;
+        transform: translateY(-10px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media(max-width:680px){
+    .menu-button{
+        display: block;
+        margin-right: 1em;
+        font-size: var(--text-extralarge);
+    }
+    .nav-list{
+        display: none;
+        padding: 1em;
+        right: 0;
+        margin-right: 0;
+        gap: 0.25em;
+
+    }
+    .nav-list li{
+        background-color: var(--color-primary);  
+        width: 100%;
+        padding: 0.75em;
+        animation: slidein 0.3s ease forwards;
+    }
+
+
+    .menu-active{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 84px;
+        align-items: flex-start;
+    }
+/* nth-child is a CSS pseudo selector that targets specific children by their position.  */
+    .menu-active li:nth-child(1){animation-delay: 0s;}
+    .menu-active li:nth-child(2){animation-delay: 0.1s;}
+    .menu-active li:nth-child(3){animation-delay: 0.2s;}
+    .menu-active li:nth-child(4){animation-delay: 0.3s;}
+
+    .tagline{
+        font-size: 1.5rem;
+    }
+
+    .quote{
+        font-size: 1.7rem;
+    }
+
+    #about{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-one{
+
+        flex-direction: column;
+    }
+
+    .founders-desk{
+        flex-direction: column;
+    }
+
+    /* .img-container-1{
+        height: 450px;
+        width: 450px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+
+
+    .contact-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form-container{
+        height: 510px;
+    }
+
+}
